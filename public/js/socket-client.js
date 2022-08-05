@@ -33,5 +33,7 @@ btnSend.addEventListener("click", () => {
     timestamp: Date.now(),
   };
 
-  socket.emit("send-message", payload);
+  socket.emit("send-message", payload, (id) => {
+    console.log("Desde el server", id);
+  });
 });
